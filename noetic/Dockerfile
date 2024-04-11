@@ -102,6 +102,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 ## Customize your image here.
-#
+
+# Add jupyter notebook and other python dependencies
+RUN pip install jupyterlab \
+    notebook \
+    pandas \
+    rasterio \
+    scikit-learn \
+    plotly
+    
+
 #
 ## ...

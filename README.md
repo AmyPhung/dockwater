@@ -1,6 +1,8 @@
 # dockwater
 Docker images used across multiple repositories supporting simulation of water-related robotics
 
+See google doc for personal notes on usage & debugging: https://docs.google.com/document/d/1bstj2t2Geap9SZYHrgjJwSUrsVRTuBC4MVZS_xawNPw/edit#heading=h.8r7g6fhmdo5h
+
 ## Distributions
 This repository supports baseline images for running Gazebo on the following ROS distributions:
 
