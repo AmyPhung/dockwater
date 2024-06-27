@@ -99,6 +99,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gdb \
     psmisc \
     vim \
+    net-tools \
+    iputils-ping \
+    htop \
     && rm -rf /var/lib/apt/lists/*
 
 ## Customize your image here.
@@ -112,5 +115,19 @@ RUN pip install jupyterlab \
     plotly
     
 
+# Add dependencies for bluerov
+RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add - \
+ && apt update \
+ && apt install -y \
+    ros-${DIST}-image-proc \
+    ros-${DIST}-robot-state-publisher \
+    ros-${DIST}-apriltag-ros
+# GTSAM - https://gtsam.org/get_started/ and PCL
+RUN add-apt-repository ppa:borglab/gtsam-release-4.0 \
+ && apt update \
+ && apt install -y \
+    libgtsam-dev \
+    libgtsam-unstable-dev \
+    libpcl-dev
 #
-## ...
+
