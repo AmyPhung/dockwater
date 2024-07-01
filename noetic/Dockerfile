@@ -121,7 +121,9 @@ RUN curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sud
  && apt install -y \
     ros-${DIST}-image-proc \
     ros-${DIST}-robot-state-publisher \
-    ros-${DIST}-apriltag-ros
+    ros-${DIST}-apriltag-ros \
+    ros-${DIST}-usb-cam
+
 # GTSAM - https://gtsam.org/get_started/ and PCL
 RUN add-apt-repository ppa:borglab/gtsam-release-4.0 \
  && apt update \
@@ -129,5 +131,6 @@ RUN add-apt-repository ppa:borglab/gtsam-release-4.0 \
     libgtsam-dev \
     libgtsam-unstable-dev \
     libpcl-dev
-#
+# Patch fix for python -> python3
+RUN ln -s /usr/bin/python3 /usr/bin/python
 
