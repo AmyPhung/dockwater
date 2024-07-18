@@ -131,6 +131,14 @@ RUN add-apt-repository ppa:borglab/gtsam-release-4.0 \
     libgtsam-dev \
     libgtsam-unstable-dev \
     libpcl-dev
+
+# Add dependencies for manip testing
+RUN apt install -y \
+    ros-${DIST}-pcl-ros \
+    ros-${DIST}-moveit-visual-tools \
+    ros-${DIST}-rosparam-shortcuts \
+    libgflags-dev
+
 # Patch fix for python -> python3
 RUN ln -s /usr/bin/python3 /usr/bin/python
 

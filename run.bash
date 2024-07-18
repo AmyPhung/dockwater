@@ -44,6 +44,8 @@ Help()
 
 
 JOY=/dev/input/js0
+VID0=/dev/video0
+VID1=/dev/video1
 CUDA=""
 #ROCKER_ARGS="--devices $JOY --dev-helpers --nvidia --x11 --user --home --git"
 #ROCKER_ARGS="--devices $JOY --dev-helpers --x11 --user --home --git"
