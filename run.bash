@@ -49,7 +49,7 @@ VID1=/dev/video1
 CUDA=""
 #ROCKER_ARGS="--devices $JOY --dev-helpers --nvidia --x11 --user --home --git"
 #ROCKER_ARGS="--devices $JOY --dev-helpers --x11 --user --home --git"
-ROCKER_ARGS="--devices $JOY --dev-helpers --x11 --user --home --git --network=host"
+ROCKER_ARGS="--privileged --devices $JOY --dev-helpers --x11 --user --home --git --network=host"
 
 while getopts ":cstxh" option; do
   case $option in
